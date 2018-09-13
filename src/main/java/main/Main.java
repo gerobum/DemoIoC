@@ -1,6 +1,7 @@
 package main;
 
 import metier.Etudiant;
+import metier.MeilleureDesNotes;
 import metier.Notes;
 
 /**
@@ -10,8 +11,8 @@ import metier.Notes;
 public class Main {
 
     public static void main(String[] args) {
-        Notes notes = new Notes();
-        notes.setN1(12);
+        MeilleureDesNotes notes = new MeilleureDesNotes();
+        notes.setN1(2);
         notes.setN2(17);
         
         Etudiant etudiant = new Etudiant();

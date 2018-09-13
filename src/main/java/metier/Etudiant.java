@@ -1,17 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package metier;
 
 /**
- *
+ * Le calcul de la moyenne ne fonctionne pas bien pour certains étudiants.
+ * On aimerait changer le principe de calcul et ne retenir que la meilleure
+ * des deux notes.
+ * 
+ * Mais on souhaite conserver la classe Notes parce qu'elle est toujours
+ * utilisée ailleurs.
+ * 
+ * À cause du couplage fort entre Etudiant et Notes, il faut créer et une 
+ * nouvelle classe MeilleureDesNotes semblable à Notes et surtout modifier
+ * Etudiant.
+ * 
+ * On dit que la classe Etudiant n'est pas fermée à la modification
+ * 
  * @author yvan
  */
 public class Etudiant {
     private String nom;
-    private Notes notes;
+    private MeilleureDesNotes notes;
 
     public Etudiant() {
     }
@@ -20,7 +28,7 @@ public class Etudiant {
         this.nom = nom;
     }
 
-    public void setNotes(Notes notes) {
+    public void setNotes(MeilleureDesNotes notes) {
         this.notes = notes;
     }
     
