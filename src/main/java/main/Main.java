@@ -1,13 +1,10 @@
 package main;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Scanner;
 import metier.Etudiant;
 import metier.INotes;
-import metier.Meilleure;
-import metier.Notes;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
@@ -23,20 +20,26 @@ public class Main {
         // On peut utiliser l'intropection pour rendre paramétrable le mode
         // de calcul de la note finale.
         // INotes notes = new MeilleureDesNotes();
-        Scanner in = new Scanner(new File("src/main/resources/config.txt"));
+        // Scanner in = new Scanner(new File("src/main/resources/config.txt"));
+        ClassPathXmlApplicationContext context = 
+                new ClassPathXmlApplicationContext("config.xml");
         
-        
-        INotes notes = (INotes) Class.forName(in.next()).newInstance();
+        //INotes notes = (INotes) Class.forName(in.next()).newInstance();
+        INotes notes = (INotes) context.getBean("notes"); 
 
         // notes.setN1(2);
-        notes.getClass().getMethod("set"+in.next(), int.class).invoke(notes, in.nextInt());
+        //notes.getClass().getMethod("set"+in.next(), int.class).invoke(notes, in.nextInt());
         // notes.setN2(17);
-        notes.getClass().getMethod("set"+in.next(), int.class).invoke(notes, in.nextInt());
+        // notes.getClass().getMethod("set"+in.next(), int.class).invoke(notes, in.nextInt());
         
-        Etudiant etudiant = new Etudiant();
+        
+        //Etudiant etudiant = new Etudiant();
+        
+        Etudiant etudiant = (Etudiant) context.getBean("etudiant"); 
         etudiant.setNom("Toto");
-        etudiant.setNotes(notes);
-        
+        // etudiant.setNotes(notes);
+        System.out.println("\n-------------------------\n");
         System.out.println(etudiant);
+        System.out.println("-------------------------\n");
     }
 }
