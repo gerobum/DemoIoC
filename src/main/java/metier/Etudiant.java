@@ -19,7 +19,7 @@ package metier;
  */
 public class Etudiant {
     private String nom;
-    private MeilleureDesNotes notes;
+    private INotes notes;
 
     public Etudiant() {
     }
@@ -28,7 +28,7 @@ public class Etudiant {
         this.nom = nom;
     }
 
-    public void setNotes(MeilleureDesNotes notes) {
+    public void setNotes(INotes notes) {
         this.notes = notes;
     }
     

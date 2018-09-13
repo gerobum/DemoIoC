@@ -9,7 +9,7 @@ package metier;
  *
  * @author yvan
  */
-public class Notes {
+public class Notes implements INotes {
     private int n1, n2;
     
     public Notes() {
@@ -24,6 +24,7 @@ public class Notes {
         this.n2 = n2;
     }
     
+    @Override
     public int calcul() {
         return (n1+n2)/2;
     }
