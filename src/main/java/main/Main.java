@@ -12,11 +12,9 @@ import metier.Notes;
 public class Main {
 
     public static void main(String[] args) {
-        // Grâce à l'interface INotes, il n'est plus nécessaire de modifier 
-        // la classe Etudiant.
-        // Elle est fermée à la modification et ouverte à l'exension
-        // car on peut ajouter autant de nouveaux modes de calcul que
-        // l'on veut à l'aide de classes qui implémentent INotes
+        // La classe Main n'est pas ouverte à l'extension.
+        // On ne peut pas choisir entre MeilleureDesNotes ou Notes ou
+        // un autre mode de calcul sans modifier le code et recompiler.
         MeilleureDesNotes notes = new MeilleureDesNotes();
         //Notes notes = new Notes();
         notes.setN1(2);
