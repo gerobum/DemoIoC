@@ -4,11 +4,11 @@ package metier;
  *
  * @author yvan
  */
-public class MeilleureDesNotes implements INotes {
+public class Pire implements INotes {
 
     private int n1, n2;
 
-    public MeilleureDesNotes() {
+    public Pire() {
 
     }
 
@@ -22,6 +22,6 @@ public class MeilleureDesNotes implements INotes {
 
     @Override
     public int calcul() {
-        return Math.max(n1, n2);
+        return Math.min(n1, n2);
     }
 }
